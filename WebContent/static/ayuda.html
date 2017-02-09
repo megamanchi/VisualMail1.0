@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+    
+      
+       <script src="../resources/js/angular.min.js"></script>
+       <script src="../resources/js/angular-animate.min.js"></script>
+        <script src="../resources/js/angular-route.min.js"></script>
+        <script src="../resources/js/angular-aria.min.js"></script>
+          <script src="../resources/js/angular-messages.min.js"></script>
+             <script src="../resources/js/svg-assets-cache.js"></script>
+                <script src="../resources/js/angular-material.min.js"></script>
+
+
+	 <link href="../resources/css/angular-material.min.css" rel="stylesheet">
+	 	 <link href="../resources/css/docs.css" rel="stylesheet">
+
+ 
+
+
+
+<style>
+p{
+font-size: 1.5rem;
+}
+.tabsdemoDynamicHeight md-content {
+  background-color: transparent !important; }
+  .tabsdemoDynamicHeight md-content md-tabs {
+    background: #f6f6f6;
+    border: 1px solid #e1e1e1; }
+    .tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
+      background: white; }
+  .tabsdemoDynamicHeight md-content h1:first-child {
+    margin-top: 0; }
+</style>
+<script>
+angular.module('MyApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
+
+
+.controller('AppCtrl', function($scope) {
+	$scope.volver = function(ev) {
+		window.location.href = "/VisualMail1.0/Cargar";	
+	  };
+
+});
+
+
+</script>
+<body>
+<div ng-cloak="" ng-controller="AppCtrl" class="tabsdemoDynamicHeight" ng-app="MyApp">
+  <md-toolbar class="md-theme-light" style="background-color: #D4D4D4;">
+    <h2 class="md-toolbar-tools">
+      <span>AYUDA</span>
+      <span flex></span>
+        <md-button ng-click="volver()">
+        Volver a Visual Mail
+      </md-button>
+      
+    </h2>
+  </md-toolbar>
+  <md-content>
+    <md-tabs md-dynamic-height="" md-border-bottom="">
+      <md-tab label="Visual Mail">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">¿Que es Visual Mail?</h1>
+          <p>Es una herramientas de comunicación mediada por computador que se apoya del concepto de los <B>“Elementos del dialogo”</B> más las ultimas tecnologías de Front End Web disponibles tales como HTML5 y CSS3 entre muchas otras, todo lo anterior con el fin de consegir una mejor percepción de la situacion del usuario.</p>
+              <img style="margin: auto; max-width: 60%;" alt="Visual Mail" src="VisualMail.png">
+        </md-content>
+      </md-tab>
+      <md-tab label="Elementos del Dialogo (1)">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Elementos del Dialogo </h1>
+         <h1 class="md-display-1">1 Duda o Alternativa  </h1>
+            
+            <table>
+            <tr>
+            <td style="width:50%">
+                <p>Se plantea falta de información sobre un tema particular o no existe claridad sobre el problema, la oportunidad o las alternativas de solución. Esto crea incertidumbre en cómo continuar con el proyecto.
+            <br>EJEMPLO: “¿Qué tecnología es la más apropiada para este proyecto?”</p>
+            </td>
+            <td>
+             <p><img style="margin: auto; max-width: 90px;     vertical-align:middle;"    alt="Visual Mail" src="da.png"> </p>
+             </td>
+            </tr>
+            </table>
+        
+                   
+          
+          <h1 class="md-display-1">2 Desacuerdo o Brecha</h1>
+             <table>
+            <tr>
+            <td style="width:50%">
+          <p>Se presenta una contraposición entre puntos de vista sobre un tema o se detecta una brecha entre lo proyectado versus lo logrado. En ambos casos es necesario resolver el asunto para continuar el proyecto.
+            <br>EJEMPLO: “¡El proyecto será un éxito!, yo no estaría tan confiado como tú” </p>
+              </td>
+            <td>
+            <p> <img style="margin: auto; max-width: 90px;     vertical-align:middle;"    alt="Visual Mail" src="db.png"> </p>  
+             </td>
+            </tr>
+              </table>
+                    
+                      <h1 class="md-display-1">3 Norma Común</h1>
+            <table>
+            <tr>
+            <td style="width:50%">           
+          <p>La falta de normas, reglas o estándares comunes producen caos. Las normas y reglas comunes ordenan el trabajo. Estas reglas deben ser aceptadas colectivamente y consideradas leyes para el futuro.
+          <br>EJEMPLO: “Desde ahora en adelante usaremos solo metodologías Agiles”</p>
+               </td>
+            <td>
+           <p><img style="margin: auto; max-width: 90px;     vertical-align:middle;"    alt="Visual Mail" src="nc.png"> </p>           
+             </td>
+            </tr>
+              </table>
+        </md-content>
+      </md-tab>
+      <md-tab label="Elmentos de Dialogo (2)">
+        <md-content class="md-padding">
+                  <h1 class="md-display-1">4 Compromiso individual</h1>
+                     <table>
+            <tr>
+            <td style="width:50%">
+          <p>Ciertos compromisos deben ser asumidos por personas específicas en fechas específicas para asegurarse que sean efectuados.  Ni las reglas ni los acuerdos de coordinación colectivos logran ese efecto.
+            <br> EJEMPLO: “Yo me ofrezco, el producto estará el próximo jueves”. </p>
+              </td>
+            <td>
+                      <p><img style="margin: auto; max-width: 90px;     vertical-align:middle;"    alt="Visual Mail" src="ci.png"> </p>  
+                        </td>
+           			 </tr>
+              </table>         
+                  <h1 class="md-display-1">5 Acuerdos de Coordinación</h1>
+                      <table>
+            <tr>
+            <td style="width:50%">
+          <p>La coordinación grupal requiere acuerdos asumidos por todos. Si no son normas comunes o compromisos individuales se deben tratar como acuerdos de coordinación.
+          <br>EJEMPLO: “Hay acuerdo que las reuniones, desde hoy, sean a las 8:15”</p>
+               </td>
+            <td>
+                <p><img style="margin: auto; max-width: 90px;     vertical-align:middle;"    alt="Visual Mail" src="ac.png"> </p>  
+                   </td>
+           			 </tr>
+              </table>                  
+                     <h1 class="md-display-1">6 Tarea</h1>
+                    <table>
+            <tr>
+            <td style="width:50%">           
+          <p>Acción emprendida por una persona para lograr un objetivo. Aunque es obvio que un compromiso da lugar a una tarea. Resolver desacuerdos, enfrentar dudas, implementar normas, o la coordinación grupal dan origen a nuevas tareas.
+          <br>EJEMPLO: “Hacer el plan prometido para las 12 am del jueves” </p>
+                </td>
+            <td>
+              <p> <img style="margin: auto; max-width: 90px;     vertical-align:middle;"    alt="Visual Mail" src="ta.png"> </p>           
+                 </td>
+           			 </tr>
+              </table>         
+        </md-content>
+      </md-tab>
+            <md-tab label="Funcionamiento Visual Mail">
+        <md-content">
+                  <h1 class="md-display-1">Interfaz</h1>
+                  <img   alt="Visual Mail" src="VisualMail1.PNG"> 
+                  
+                  <p>
+                  1) Filtro de usuarios: permite filtrar en forma visual las interacciones de los usuarios, además proporciona la cantidad de intervenciones de cada usuario. </p>     
+   <p>2)Duración del diálogo: Tiempo transcurrido entre la primera interacción y la última.</p>
+     <p>3)Usuario Actual: Representa en usuario conectado a la sesión actual.</p>  
+     <p>4)Administración, ayuda y salir de la aplicación.</p>  
+     <p>5)Reciber es el usuario al cual se le está enviando el mensaje.</p>  
+     <p>6)Sender es el usuario que envía el mensaje.</p>  
+     <p>7)Responder: habilita el cuadro de texto para que el sender pueda enviar mensajes.</p>  
+     <p>8)Enviar:envía el mensaje una vez digitado y además actualiza el diálogo.</p>  
+     <p>9)Sesiones: representa una unidad temporal donde el usuario está conectado, agrupa interacciones de un usario que han sucedido en un tiempo similar.</p>  
+     <p>10)Recibir post actualiza el diálogo desde servidor, siempre es recomendable antes de interactuar presionar primero este botón para mantener el diálogo actualizado.</p>  
+     <p>11)Foco principal: representa el foco en una interacción en particular, con esto se carga el texto de la interacción en el sender.
+     <p>12)Foco secundario:representa el foco en una interacción relacionada de alguna forma con  la interacción del foco principal, su contenido se ve reflejado en el sender.</p>  
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>
+
+</body>
