@@ -63,7 +63,8 @@ public class userController
     				usersjon= mapper.readValue(new File("visualMailUsers.json"), containerVM.getListUser().getClass());	 
     			  if (OperativeSystem.isUnix())
     				 usersjon= mapper.readValue(new File("/opt/tomcat/visualMailUsers.json"), containerVM.getListUser().getClass());	 
-    			  
+    			  if (OperativeSystem.isMac())
+     				 usersjon= mapper.readValue(new File("visualMailUsers.json"), containerVM.getListUser().getClass());	 
     			 containerVM.setListUser(usersjon);
     			 return usersjon;
     		}
@@ -133,7 +134,9 @@ public class userController
 			   mapper.writeValue(new File("Cuestionarios.json"), ContainerCuestionarios);
 		   if (OperativeSystem.isUnix())
 			    mapper.writeValue(new File("/opt/tomcat/Cuestionarios.json"), ContainerCuestionarios);
-		mutex.release();
+		   if (OperativeSystem.isMac())
+			   mapper.writeValue(new File("Cuestionarios.json"), ContainerCuestionarios);
+		   mutex.release();
 		   
 		return Cuestionario;
 	}
@@ -158,6 +161,8 @@ public class userController
 				ContainerCuestionarios= mapper.readValue(new File("Cuestionarios.json"), ContainerCuestionarios.class );
 			if (OperativeSystem.isUnix())
 				ContainerCuestionarios= mapper.readValue(new File("/opt/tomcat/Cuestionarios.json"), ContainerCuestionarios.class );
+			if (OperativeSystem.isMac())
+				ContainerCuestionarios= mapper.readValue(new File("Cuestionarios.json"), ContainerCuestionarios.class );
 			}
 		
 	     for (Cuestionario cuestionario: ContainerCuestionarios.getCuestionarios()) {

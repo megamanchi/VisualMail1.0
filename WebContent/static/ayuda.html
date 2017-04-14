@@ -34,12 +34,15 @@ font-size: 1.5rem;
     margin-top: 0; }
 </style>
 <script>
+var loc = window.location;
+var pathName = loc.pathname.substring(0, loc.pathname.lastIndexOf('/') + 1);
 angular.module('MyApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
 
 
 .controller('AppCtrl', function($scope) {
 	$scope.volver = function(ev) {
-		window.location.href = "/VisualMail1.0/Cargar";	
+		window.history.back();
+		//window.location.href = pathName+'Cargar';	
 	  };
 
 });

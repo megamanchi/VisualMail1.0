@@ -89,6 +89,8 @@ font-size: 1.5rem;
     margin-top: 0; }
 </style>
 <script>
+var loc = window.location;
+var pathName = loc.pathname.substring(0, loc.pathname.lastIndexOf('/') + 1);
 angular.module('MyApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
 
 
@@ -289,7 +291,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
 	        var defered = $q.defer();
 	        //var promise = defered.promise;
 
-	        var promise= $http.post('/VisualMail1.0/users/DataCuestionarioUsuario', $('#user').html()
+	        var promise= $http.post(pathName+'users/DataCuestionarioUsuario', $('#user').html()
 	 			).success(function(data) {
 	 				if (data=='')
 	 					 $scope.cuestionario='';
@@ -305,7 +307,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
     	$scope.data.selectedIndex++;
     };
 	$scope.volver = function(ev) {
-		window.location.href = "/VisualMail1.0/Login";	
+		window.location.href = pathName+'Login';	
 	  };
 	$scope.VM1 = function(ev) {
 		GuardaActualizaCuestionario();
@@ -327,7 +329,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
 	};
   	function GuardaActualizaCuestionario()
   	  {
-  		 $http.post('/VisualMail1.0/users/GuardarCuestionario', 
+  		 $http.post(pathName+'users/GuardarCuestionario', 
  				{
 		    	     cuestionario:$scope.cuestionario
  				}
@@ -751,7 +753,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
 		</div>       
 		</md-content>
 		  <div layout="row" layout-align="center center"> 
-		<md-button  class="md-raised md-primary" ng-href="/VisualMail1.0/Login" >Finalizar Toma Muestral</md-button>  
+		<md-button  class="md-raised md-primary" ng-click="volver()" >Finalizar Toma Muestral</md-button>  
 		</div> 
       </md-tab>         
     </md-tabs>

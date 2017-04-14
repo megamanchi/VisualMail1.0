@@ -93,6 +93,8 @@
 <body  style="color: rgb(14, 14, 14); overflow: hidden; "  >
 <div id="loader_container"></div>	
 <script>
+var loc = window.location;
+var pathName = loc.pathname.substring(0, loc.pathname.lastIndexOf('/') + 1);
 var person = {Name:"Sin Filtro", Interactions:0}; 
 var Users=[];
 var ultimaSession=0;
@@ -106,7 +108,7 @@ function zoomHtml() {
 }
 
 $(".LogOut").click(function() {
-	window.location.href = "/VisualMail1.0/Login";
+	window.location.href = pathName+'Login';
 	});
 
 var seleccionfire;
@@ -330,10 +332,10 @@ $(document).ready(function(){
 		}
 	
 	$(".LogOut .LogOutImg").click(function() {
-		window.location.href = "/VisualMail1.0/Login";
+		window.location.href = pathName+'Login';
 		});
 	$(".help").click(function() {
-		window.location.href = "/VisualMail1.0/static/ayuda.html";		
+		window.location.href = pathName+'static/ayuda.html';		
 		});
 	
     $("div").select(function(){		
@@ -467,12 +469,12 @@ $(document).ready(function(){
 	    
 	    if (id=="ui-id-6")
     	{
-	    	window.location.href = "/VisualMail1.0/ListaUsers";
+	    	window.location.href = pathName+'ListaUsers';
     	
     	}
 	    if (id=="ui-id-7")
     	{
-	    	window.location.href = "/VisualMail1.0/Login";
+	    	window.location.href = pathName+'Login';
     	
     	}
 	    
@@ -530,7 +532,7 @@ $(document).ready(function(){
     	}
 	    if (id=="ui-id-5")
     	{
-    	window.open("/VisualMail1.0/data");
+    	window.open(pathName+'data');
     	
     	}
 	    
@@ -1488,12 +1490,12 @@ function loadAjax() {
     	    };
 
     	    this.adminusers = function() {
-    	    	window.location.href = "/VisualMail1.0/ListaUsers";
+    	    	window.location.href = pathName+'ListaUsers';
 
     	      originatorEv = null;
     	    };
     	    this.JSON = function() {
-    	    	window.location.href = "/VisualMail1.0//data";
+    	    	window.location.href = pathName+'data';
 
     	      originatorEv = null;
     	    };
@@ -1581,12 +1583,12 @@ function loadAjax() {
   	    };
 
   	    this.adminusers = function() {
-  	    	window.location.href = "/VisualMail1.0/ListaUsers";
+  	    	window.location.href = pathName+'ListaUsers';
 
   	      originatorEv = null;
   	    };
   	    this.JSON = function() {
-  	    	window.location.href = "/VisualMail1.0//data";
+  	    	window.location.href = pathName+'data';
 
   	      originatorEv = null;
   	    };

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.concurrent.*;
 
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.access.SingletonBeanFactoryLocator;
@@ -70,7 +71,7 @@ public class dataController {
 					String name= Mensaje.getName();
 					String element=Mensaje.getElement();
 					String mensaje =Mensaje.getMensaje();
-				    //se setean propidades de container vm que son sección critica.
+				    //se setean propidades de container vm que son seccion critica.
 					mutex.acquire();
 					  
 				    color = "#" + color;
@@ -158,8 +159,9 @@ public class dataController {
 					   mapper.writeValue(new File("visualMailLog.json"), Root);
 				   if (OperativeSystem.isUnix())
 					    mapper.writeValue(new File("/opt/tomcat/visualMailLog.json"), Root);
-			    				
-				
+				   if (OperativeSystem.isMac())
+					   mapper.writeValue(new File("visualMailLog.json"), Root);
+				   				
 			    return Root;
 
 		}
@@ -173,7 +175,9 @@ public class dataController {
 				if (OperativeSystem.isWindows())
 					Root= mapper.readValue(new File("visualMailLog.json"), Node.class );
 				if (OperativeSystem.isUnix())
-					Root= mapper.readValue(new File("/opt/tomcat/visualMailLog.json"), Node.class );  
+					Root= mapper.readValue(new File("/opt/tomcat/visualMailLog.json"), Node.class );
+				if (OperativeSystem.isMac())
+					Root= mapper.readValue(new File("visualMailLog.json"), Node.class );
 			    containerVM.CountNodesV2(Root);
 			    containerVM.setCountNodes(Root.getdescendants());			  
 			    containerVM.addChildren(Root);

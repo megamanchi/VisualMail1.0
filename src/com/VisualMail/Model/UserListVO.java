@@ -125,9 +125,9 @@ public class UserListVO implements Serializable
 	protected class IteratorUser implements  Iterator<UserVO>   {
 		  public int posicion = 0;    public boolean sepuedeeliminar = false;  // Campos
 		    @Override
-		    public boolean hasNext() {return posicion < users.size();}  // Método
+		    public boolean hasNext() {return posicion < users.size();}  // Metodo
 		    @Override
-		    public UserVO next() {  // Método
+		    public UserVO next() {  // Metodo
 		    	UserVO res = users.get(posicion); // Creamos un objeto Persona igual al que recorremos
 		        posicion ++;
 		        sepuedeeliminar = true;
@@ -138,7 +138,7 @@ public class UserListVO implements Serializable
 		        	users.remove(posicion-1);
 		            posicion--;
 		            sepuedeeliminar = false; }
-		    } // Cierre del método remove
+		    } // Cierre del metodo remove
     }
 	
 	

@@ -128,18 +128,20 @@ $(document).ready(function() {
 
 <script>
 var app = angular.module('myApp', []);
+var loc = window.location;
+var pathName = loc.pathname.substring(0, loc.pathname.lastIndexOf('/') + 1);
 app.controller('users', [ '$scope', '$http',                                   
                                 		function($scope, $http) {
 										$("#msg").hide();
 										$scope.loginUser = function(){
-                                			$http.post('/VisualMail1.0/users/login', 
+                                			$http.post(pathName+'users/login', 
                                 				{
                                 					mail : $scope.Mail,
                                 					password: $scope.password
                                 				}
                                 			).success(function(data) {
                                 			     if (data==true){
-                                			 		window.location.href = "/VisualMail1.0/Cargar";
+                                			 		window.location.href = pathName+'Cargar';
                                 			    	// $scope.vmRedirect();  
                                 			    	/*
                                 			 		$scope.$on("myEvent", function (event, args) {
@@ -160,7 +162,7 @@ app.controller('users', [ '$scope', '$http',
                                 			});
 										}
 										$scope.vmRedirect = function(){
-                                			$http.post('/VisualMail1.0/users/Cargar', 
+                                			$http.post(pathName+'users/Cargar', 
                                 				{
                                 					mail : $scope.Mail,
                                 					password: $scope.password
@@ -172,14 +174,14 @@ app.controller('users', [ '$scope', '$http',
                                 			});
 										}
 										$scope.loginUserCuestionarios = function(){
-                                			$http.post('/VisualMail1.0/users/login', 
+                                			$http.post(pathName+'users/login', 
                                 				{
                                 					mail : $scope.Mail,
                                 					password: $scope.password
                                 				}
                                 			).success(function(data) {
                                 				   if (data==true)
-                                   			 		window.location.href = '/VisualMail1.0/Cuestionarios';
+                                   			 		window.location.href = pathName+'Cuestionarios';
                                 			}).error(function(error) {
                                 				$scope.msg = 'Se ha producido un error';
                                 			});

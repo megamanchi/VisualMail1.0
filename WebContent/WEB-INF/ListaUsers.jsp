@@ -242,12 +242,13 @@ $(document).ready(function() {
 
 <script>
 var app = angular.module('myApp', []);
-app.controller('users', [ '$scope', '$http',
-                                    
+var loc = window.location;
+var pathName = loc.pathname.substring(0, loc.pathname.lastIndexOf('/') + 1);
+app.controller('users', [ '$scope', '$http',									
                                 	function($scope, $http) {
 										$("#msg").hide();
                                 		$scope.users = function() {
-                                			$http.get('/VisualMail1.0/users').success(function(data) {
+                                			$http.get(pathName+'users').success(function(data) {
                                 				$scope.users = data.users;
                                 				   
                                 				
@@ -257,7 +258,7 @@ app.controller('users', [ '$scope', '$http',
                                 		}
                                 		
                                 		$scope.addUser = function() {
-                                			$http.post('/VisualMail1.0/users', 
+                                			$http.post(pathName+'users', 
                                 				{
                                 					fullName : $scope.fullName,
                                 					userName : $scope.userName,
@@ -304,7 +305,7 @@ app.controller('users', [ '$scope', '$http',
                                 	
                                 		}
                                 		$scope.removeUser = function(user) {
-                                			$http.delete('/VisualMail1.0/users/'+user.id
+                                			$http.delete(pathName+'users/'+user.id
                                     			).success(function(data) {
                                     				$scope.msg = 'Usuario eliminado correctamente';
                                     				$scope.users = data.users;
@@ -331,7 +332,7 @@ app.controller('users', [ '$scope', '$http',
                                 		}
                                 		
 										$scope.editCallSerice = function(id) {
-										$http.put('/VisualMail1.0/users', 
+										$http.put(pathName+'users', 
                                 				{
                                 					fullName : $scope.fullName,
                                 					userName : $scope.userName,
@@ -357,10 +358,10 @@ app.controller('users', [ '$scope', '$http',
 										}
 										$scope.goVM = function() {
 											
-											window.location.href = "/VisualMail1.0/Login";
+											window.location.href = pathName+'Login';
 										}
 										$scope.ResetCuuestionarios = function() {											
-											$http.post('/VisualMail1.0/users/ResetCuestionarios'                               			
+											$http.post(pathName+'users/ResetCuestionarios'                               			
 	                                			).success(function(data) {
 	                                				$scope.msg = 'Cuestionarios elminados correctamente';
 	                                				$("#msg").show();

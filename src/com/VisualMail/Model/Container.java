@@ -166,8 +166,10 @@ public class Container {
 			  
 			   if (OperativeSystem.isWindows())
 			   mapper.writeValue(new File("visualMailUsers.json"), this.getListUser());
-			   if (OperativeSystem.isUnix())
+			   else if (OperativeSystem.isUnix())
 			   mapper.writeValue(new File("/opt/tomcat/visualMailUsers.json"), this.getListUser());
+			    else 
+				mapper.writeValue(new File("visualMailUsers.json"), this.getListUser());
 			   return "OK";
 	        }
 	        catch (Exception e) {         	
