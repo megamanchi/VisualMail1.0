@@ -6,7 +6,7 @@ Proyecto maven preparado para eclipse o para generacion por terminal (windows,li
 
 2- Instalar Apache Maven.
 
-3- Ejecutar mvn para generar y gestionar sus dependencias y war de VisualMail. 
+3- Ejecutar mvn para generar y gestionar sus dependencias del war de VisualMail. 
 
 4- Instalar Apache Tomcat 8 o superior.
 
