@@ -1,6 +1,6 @@
 "Instalacion VisualMail1.0" 
 
-Proyecto maven preprado para eclipse o para generacion por terminal (windows,linux y mac), para la generacion del war e instalacion de VisualMail,los pasos son los siguientes:
+Proyecto maven preparado para eclipse o para generacion por terminal (windows,linux y mac), para la generacion del war e instalacion de VisualMail,los pasos son los siguientes:
 
 1- Instalar y configurar JAVA 8 SDK.
 
