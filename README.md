@@ -14,7 +14,7 @@ Proyecto maven preparado para eclipse o para generacion por terminal (windows,li
 
 7- Si todo esta correctamente configurado ingresar aL mantenedor de usuarios y crear un usuario en el link: http://localhost:8080/VisualMail-1.0.0.RELEASE/ListaUsers
 
-8- Cree los usuarios necesarios para sus discuciones y presione volver para ir a login.
+8- Cree los usuarios necesarios para sus discusiones y presione volver para ir a login.
 
 9- Una vez en el login ingrese con un usuario previamente creado.
 
