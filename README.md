@@ -18,5 +18,5 @@ Proyecto maven preprado para eclipse o para generacion por terminal (windows,lin
 
 9- Una vez en el login ingrese con un usuario previamente creado.
 
-10	- Felicitaciones VisualMail esta listo para usar, adcionalmente hay una opcion de ayuda en en la esquina superior derecha del panel principal, para dudas adcionales escriba al mail zerodump2@gamil.com	
+10	- Felicitaciones VisualMail esta listo para usar, adicionalmente hay una opcion de ayuda en la esquina superior derecha del panel principal, para dudas adicionales escriba al mail zerodump2@gamil.com	
  
